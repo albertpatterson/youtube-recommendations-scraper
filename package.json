@@ -1,7 +1,7 @@
 {
-  "name": "made_with_create-extension",
+  "name": "youtube_recommendation_scraper",
   "version": "1.0.0",
-  "description": "A browser extension made with create-extension",
+  "description": "A browser extension to scrape youtube recommendations",
   "main": "index.js",
   "scripts": {
     "build": "node build/prod -r",
@@ -14,7 +14,7 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "https://github.com/albertpatterson/create-extension"
+    "url": "https://github.com/albertpatterson/youtube-recommendations-scraper"
   },
   "license": "GPL-3.0",
   "dependencies": {

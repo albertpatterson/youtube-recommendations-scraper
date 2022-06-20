@@ -1,12 +1,12 @@
 {
   "manifest_version": 3,
-  "name": "scraper",
+  "name": "youtube_recommendations_scraper",
   "version": "1.0.0",
 
-  "description": "Scrape a webpage - made with create-extension",
+  "description": "Scrape Youtube recommendations - made with create-extension",
 
   "action": {
-    "default_title": "analysis-utils",
+    "default_title": "YT-Scraper",
     "default_icon": {
       "16": "icon/icon16.png",
       "24": "icon/icon24.png",
@@ -22,6 +22,6 @@
     "service_worker": "background/service_worker.js"
   },
   "commands": {},
-  "homepage_url": "https://github.com/albertpatterson/chrome-extension-starter",
+  "homepage_url": "https://github.com/albertpatterson/youtube-recommendations-scraper",
   "permissions": ["activeTab", "scripting"]
 }
