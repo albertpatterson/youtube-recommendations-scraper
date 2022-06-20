@@ -16,8 +16,6 @@
 
 import { getConfig as getBackgroundConfig } from './webpack/get.webpack.config.background.js';
 import { getConfig as getInjectedConfig } from './webpack/get.webpack.config.injected.js';
-import { getConfig as getPopupConfig } from './webpack/get.webpack.config.popup.js';
-import { getConfig as getOptionsConfig } from './webpack/get.webpack.config.options.js';
 import * as tools from 'simple_build_tools';
 import { CONSTANTS } from './constants.js';
 
@@ -28,14 +26,6 @@ const bundleBackground = async () => {
 };
 const bundleInjected = async () => {
   const config = await getInjectedConfig(true);
-  return await tools.webpack(config);
-};
-const bundlePopup = async () => {
-  const config = await getPopupConfig(true);
-  return await tools.webpack(config);
-};
-const bundleOptions = async () => {
-  const config = await getOptionsConfig(true);
   return await tools.webpack(config);
 };
 const copyIcons = () =>
@@ -53,8 +43,6 @@ export const build = async () =>
       tools.parallel([
         bundleBackground,
         bundleInjected,
-        bundlePopup,
-        bundleOptions,
         copyIcons,
         copyManifest,
       ]),

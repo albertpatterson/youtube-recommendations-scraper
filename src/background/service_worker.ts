@@ -14,20 +14,12 @@
  * be preserved. Contributors provide an express grant of patent rights.
  */
 
-import { handleRequestInServiceWorker } from '../messaging/framework/message';
-
-/**
- * handle requests sent via the message system
- */
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  console.log('received message in service worker', request);
-
-  return handleRequestInServiceWorker(request, sender, sendResponse);
+// background.js
+chrome.action.onClicked.addListener((tab) => {
+  if (tab.id !== undefined) {
+    chrome.scripting.executeScript({
+      target: { tabId: tab.id },
+      files: ['injected/content.js'],
+    });
+  }
 });
-
-/**
- * Top level extension logic
- */
-(async () => {
-  console.log('Extension loaded');
-})();

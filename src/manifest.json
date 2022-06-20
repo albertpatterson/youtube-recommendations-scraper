@@ -1,20 +1,18 @@
 {
   "manifest_version": 3,
-  "name": "create-extension template",
+  "name": "scraper",
   "version": "1.0.0",
 
-  "description": "The next great extension to take the Web Store by storm - Built with create-extension.",
+  "description": "Scrape a webpage - made with create-extension",
 
   "action": {
-    "default_title": "create-extension template",
-    "default_popup": "popup/index.html",
+    "default_title": "analysis-utils",
     "default_icon": {
       "16": "icon/icon16.png",
       "24": "icon/icon24.png",
       "32": "icon/icon32.png"
     }
   },
-  "options_page": "options/index.html",
   "icons": {
     "16": "icon/icon16.png",
     "48": "icon/icon48.png",
@@ -24,16 +22,6 @@
     "service_worker": "background/service_worker.js"
   },
   "commands": {},
-  "content_scripts": [
-    {
-      "matches": ["https://*/*", "http://*/*"],
-      "js": ["injected/all_pages.js"]
-    },
-    {
-      "matches": ["https://*/home/*", "http://*/home/*"],
-      "js": ["injected/home_page.js"]
-    }
-  ],
   "homepage_url": "https://github.com/albertpatterson/chrome-extension-starter",
-  "permissions": []
+  "permissions": ["activeTab", "scripting"]
 }
