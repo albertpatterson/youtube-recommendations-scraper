@@ -1,6 +1,9 @@
 import { downloadJson } from './utils/download';
 import { runRandInterval, pauseRand } from './utils/timing';
+import { addBanner } from './utils/banner';
+
 (async () => {
+  const removeBanner = addBanner();
   let count = 1;
   const maxCount = 5;
 
@@ -11,7 +14,7 @@ import { runRandInterval, pauseRand } from './utils/timing';
   const urls = new Set(data.map((data) => data.url));
   scrollToLastRec();
 
-  runRandInterval(
+  await runRandInterval(
     () => {
       if (count >= maxCount) {
         downloadJson(data, 'youtube-recommendations.json');
@@ -33,6 +36,8 @@ import { runRandInterval, pauseRand } from './utils/timing';
     2e3,
     4e3
   );
+
+  removeBanner();
 })();
 
 function getRecs() {
